@@ -2,7 +2,7 @@
   "name": "VoidTune Music Player",
   "short_name": "VoidTune",
   "description": "A minimalist aesthetic music player with visualizer",
-  "start_url": "/",
+  "start_url": "https://silver-sy.github.io/Void_Tune/",
   "display": "standalone",
   "background_color": "#0d0d0d",
   "theme_color": "#1a0033",
@@ -38,4 +38,5 @@
       ]
     }
   ]
+
 }
