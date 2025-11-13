@@ -11,7 +11,6 @@ const songs = [
         src: "https://files.catbox.moe/5xaxqo.mp3",
         cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5BV8Cxx2uQDi3eetWut5WQId8kzKiVaP3KQ&s"
     },
-    
     {
         title: "Going High",
         artist: "Pure Vibe",
@@ -24,14 +23,13 @@ const songs = [
         src: "https://files.catbox.moe/76cbl3.mp3",
         cover: "https://wallpapers.com/images/thumbnail/boy-smoke-with-hand-on-face-90eo6h8ccp71qgha.jpg"
     },
-   {
+    {
         title: "Teri Galliyan (Slowed) ",
         artist: "BMW ",
         src: "https://files.catbox.moe/p5z4g2.mp3",
         cover: "https://www.stickersmurali.com/it/img/asfs2027-jpg/folder/products-listado-merchant/adesivi-logo-bmw-2.jpg"
     }
 ];
-
 
 // ========== DOM ELEMENTS ==========
 const audioPlayer = document.getElementById('audioPlayer');
@@ -61,25 +59,42 @@ const installPrompt = document.getElementById('installPrompt');
 const installBtn = document.getElementById('installBtn');
 const dismissBtn = document.getElementById('dismissBtn');
 
+// ====== iOS / PWA Lock Screen Metadata ======
+function updateIOSMediaInfo() {
+    if ('mediaSession' in navigator) {
+        const song = songs[currentSongIndex];
+
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: song.title,
+            artist: song.artist,
+            artwork: [
+                { src: song.cover, sizes: '512x512', type: 'image/png' }
+            ]
+        });
+
+        navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
+    }
+}
+
 // ========== INITIALIZE PLAYER ==========
 function initPlayer() {
     // Set canvas size
     canvas.width = 320;
     canvas.height = 320;
-    
+
     // Set initial volume
     audioPlayer.volume = 0.7;
-    
+
     // Load first song
     loadSong(currentSongIndex);
-    
+
     // Event listeners for player controls
     playPauseBtn.addEventListener('click', togglePlayPause);
     prevBtn.addEventListener('click', playPrevious);
     nextBtn.addEventListener('click', playNext);
     volumeSlider.addEventListener('input', changeVolume);
     audioPlayer.addEventListener('ended', playNext);
-    
+
     // Initialize audio context on first user interaction
     document.body.addEventListener('click', initAudioContext, { once: true });
 }
@@ -87,23 +102,23 @@ function initPlayer() {
 // ========== AUDIO CONTEXT & VISUALIZER SETUP ==========
 function initAudioContext() {
     if (audioContext) return; // Already initialized
-    
+
     try {
         // Create audio context
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        
+
         // Create analyser node
         analyser = audioContext.createAnalyser();
         analyser.fftSize = 512; // Higher for smoother circular waveform
         analyser.smoothingTimeConstant = 0.8; // Smooth transitions
         bufferLength = analyser.frequencyBinCount;
         dataArray = new Uint8Array(bufferLength);
-        
+
         // Connect audio element to analyser
         const source = audioContext.createMediaElementSource(audioPlayer);
         source.connect(analyser);
         analyser.connect(audioContext.destination);
-        
+
         console.log('Audio visualizer initialized');
     } catch (error) {
         console.error('Audio context initialization failed:', error);
@@ -119,11 +134,12 @@ function loadSong(index) {
     const song = songs[index];
     audioPlayer.src = song.src;
     albumCover.src = song.cover;
-    
-    if (isPlaying || audioPlayer.currentTime > 0) {
-        songTitle.textContent = song.title;
-        artistName.textContent = song.artist;
-    }
+
+    songTitle.textContent = song.title;
+    artistName.textContent = song.artist;
+
+    // Update lock screen info
+    updateIOSMediaInfo();
 }
 
 // ========== TOGGLE PLAY/PAUSE ==========
@@ -141,20 +157,23 @@ function playSong() {
     if (audioContext && audioContext.state === 'suspended') {
         audioContext.resume();
     }
-    
+
     audioPlayer.play();
     isPlaying = true;
-    
+
     // Update UI
     playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
     playPauseBtn.classList.add('playing');
     pulseRing.classList.add('active');
-    
+
     // Update song info
     const song = songs[currentSongIndex];
     songTitle.textContent = song.title;
     artistName.textContent = song.artist;
-    
+
+    // Update lock screen info
+    updateIOSMediaInfo();
+
     // Start visualizer
     drawVisualizer();
 }
@@ -163,12 +182,15 @@ function playSong() {
 function pauseSong() {
     audioPlayer.pause();
     isPlaying = false;
-    
+
     // Update UI
     playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     playPauseBtn.classList.remove('playing');
     pulseRing.classList.remove('active');
-    
+
+    // Update lock screen info
+    updateIOSMediaInfo();
+
     // Stop visualizer animation
     if (animationId) {
         cancelAnimationFrame(animationId);
@@ -180,13 +202,9 @@ function pauseSong() {
 function playNext() {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
     loadSong(currentSongIndex);
-    
+
     if (isPlaying) {
         playSong();
-    } else {
-        const song = songs[currentSongIndex];
-        songTitle.textContent = song.title;
-        artistName.textContent = song.artist;
     }
 }
 
@@ -194,13 +212,9 @@ function playNext() {
 function playPrevious() {
     currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
     loadSong(currentSongIndex);
-    
+
     if (isPlaying) {
         playSong();
-    } else {
-        const song = songs[currentSongIndex];
-        songTitle.textContent = song.title;
-        artistName.textContent = song.artist;
     }
 }
 
@@ -247,13 +261,8 @@ if ('serviceWorker' in navigator) {
 
 // Listen for beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent default prompt
     e.preventDefault();
-    
-    // Store event for later use
     deferredPrompt = e;
-    
-    // Show custom install prompt
     installPrompt.style.display = 'flex';
 });
 
@@ -261,15 +270,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
 if (installBtn) {
     installBtn.addEventListener('click', async () => {
         if (!deferredPrompt) return;
-        
-        // Show native install prompt
         deferredPrompt.prompt();
-        
-        // Wait for user choice
         const { outcome } = await deferredPrompt.userChoice;
         console.log(`User response: ${outcome}`);
-        
-        // Clear prompt
         deferredPrompt = null;
         installPrompt.style.display = 'none';
     });
@@ -292,6 +295,5 @@ window.addEventListener('appinstalled', () => {
 /* ===================================
    INITIALIZE ON PAGE LOAD
    =================================== */
-
 window.addEventListener('DOMContentLoaded', initPlayer);
 
