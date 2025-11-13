@@ -5,7 +5,13 @@ const songs = [
     {
         title: "Midnight Dreams",
         artist: "Luna Eclipse",
-        src: "https://github.com/Silver-Sy/Void_Tune/blob/2af5089252ce611d6847c6d108673e60fcef495d/music/Tu%20-%20Talwiinder%20(Slowed%20_%20Reverb)%20Talwinder%20Tu%20Slowed%20-%20Muhammad%20Asim%20-%20SoundLoadMate.com.mp3",
+        src: "Here is the raw link to your song file:
+
+```
+https://raw.githubusercontent.com/Silver-Sy/Void_Tune/main/music/Tu%20-%20Talwiinder%20(Slowed%20_%20Reverb)%20Talwinder%20Tu%20Slowed%20-%20Muhammad%20Asim%20-%20SoundLoadMate.com.mp3
+```
+
+You can use this URL to access or stream the file directly. If you need another file or want a clickable version, let me know!",
         cover: "https://images.unsplash.com/photo-1695893155131-5edd46be086c?q=80&w=w=400&h=400&fit=crop"
     },
     {
