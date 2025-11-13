@@ -2,12 +2,12 @@
   "name": "VoidTune Music Player",
   "short_name": "VoidTune",
   "description": "A minimalist aesthetic music player with visualizer",
-  "start_url": "https://silver-sy.github.io/Void_Tune/",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#0d0d0d",
   "theme_color": "#1a0033",
   "orientation": "portrait-primary",
-  "scope": "/",
   "icons": [
     {
       "src": "icon-192.png",
@@ -29,7 +29,7 @@
       "name": "Play Music",
       "short_name": "Play",
       "description": "Start playing music",
-      "url": "/",
+      "url": "./index.html",
       "icons": [
         {
           "src": "icon-192.png",
@@ -38,5 +38,4 @@
       ]
     }
   ]
-
 }
