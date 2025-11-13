@@ -5,8 +5,8 @@ const songs = [
     {
         title: "Midnight Dreams",
         artist: "Luna Eclipse",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        cover: "https://images.unsplash.com/photo-1614149162883-504ce0aafb40?w=400&h=400&fit=crop"
+        src: "https://github.com/Silver-Sy/Void_Tune/blob/2af5089252ce611d6847c6d108673e60fcef495d/music/Tu%20-%20Talwiinder%20(Slowed%20_%20Reverb)%20Talwinder%20Tu%20Slowed%20-%20Muhammad%20Asim%20-%20SoundLoadMate.com.mp3",
+        cover: "https://images.unsplash.com/photo-1695893155131-5edd46be086c?q=80&w=w=400&h=400&fit=crop"
     },
     {
         title: "Neon Nights",
