@@ -1,6 +1,10 @@
 /* ===================================
    VOIDTUNE v2.0 - ENHANCED STYLES
    =================================== */
+html {
+    background-color: #0d0d0d; 
+    height: 100%;
+}
 
 /* ===================================
    RESET AND BASE STYLES
@@ -432,3 +436,4 @@ body {
     }
 
 }
+
