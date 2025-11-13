@@ -19,6 +19,7 @@ body {
     justify-content: center;
     overflow: hidden;
     position: relative;
+   padding-top: env(safe-area-inset-top);
 }
 
 /* ===================================
@@ -429,4 +430,5 @@ body {
         width: 90%;
         max-width: 300px;
     }
+
 }
