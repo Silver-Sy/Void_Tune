@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="VoidTune v2.0 - A minimalist aesthetic music player with visualizer">
+    <meta name="theme-color" content="#1a0033">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="VoidTune">
+    
+    <title>VoidTune v2.0 - Music Player</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Container with Gradient -->
+    <div class="background-gradient"></div>
+    
+    <!-- Main Player Container -->
+    <div class="player-container">
+        
+        <!-- Logo/Title with Version -->
+        <h1 class="logo">VoidTune <span class="version">v2.0</span></h1>
+        
+        <!-- Album Cover Section with Canvas Visualizer -->
+        <div class="album-wrapper">
+            <div class="album-cover-container">
+                <!-- Canvas for Audio Visualizer (Behind Album) -->
+                <canvas id="visualizerCanvas" class="visualizer-canvas"></canvas>
+                
+                <!-- Album Cover Image -->
+                <img id="albumCover" src="https://images.unsplash.com/photo-1614149162883-504ce0aafb40?w=400&h=400&fit=crop" alt="Album Cover" class="album-cover">
+                
+                <!-- Pulse Ring Effect -->
+                <div id="pulseRing" class="pulse-ring"></div>
+            </div>
+        </div>
+        
+        <!-- Song Info Section -->
+        <div class="song-info">
+            <h2 id="songTitle" class="song-title">Lets Vibe !!</h2>
+            <p id="artistName" class="artist-name"></p>
+        </div>
+        
+        <!-- Player Controls -->
+        <div class="controls">
+            <button id="prevBtn" class="control-btn" aria-label="Previous">
+                <i class="fas fa-backward"></i>
+            </button>
+            
+            <button id="playPauseBtn" class="control-btn play-btn" aria-label="Play/Pause">
+                <i class="fas fa-play"></i>
+            </button>
+            
+            <button id="nextBtn" class="control-btn" aria-label="Next">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+        
+        <!-- Volume Control (Desktop Only) -->
+        <div class="volume-control">
+            <i class="fas fa-volume-up volume-icon"></i>
+            <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+        </div>
+        
+        <!-- PWA Install Prompt (Hidden by default) -->
+        <div id="installPrompt" class="install-prompt" style="display: none;">
+            <p>Install VoidTune for offline listening!</p>
+            <button id="installBtn" class="install-btn">Install App</button>
+            <button id="dismissBtn" class="dismiss-btn">✕</button>
+        </div>
+        
+    </div>
+    
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer" crossorigin="anonymous"></audio>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
