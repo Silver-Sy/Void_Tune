@@ -11,7 +11,7 @@ const songs = [
     {
         title: "Neon Nights",
         artist: "Cyber Wave",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+        src: "https://files.catbox.moe/5xaxqo.mp3",
         cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
     },
     {
