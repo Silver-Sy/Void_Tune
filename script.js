@@ -11,12 +11,7 @@ const songs = [
         src: "https://files.catbox.moe/5xaxqo.mp3",
         cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5BV8Cxx2uQDi3eetWut5WQId8kzKiVaP3KQ&s"
     },
-     {
-        title: "Teri Galliyan (Slowed) ",
-        artist: "BMW ",
-        src: "https://files.catbox.moe/p5z4g2.mp3",
-        cover: "https://www.stickersmurali.com/it/img/asfs2027-jpg/folder/products-listado-merchant/adesivi-logo-bmw-2.jpg"
-    },
+    
     {
         title: "Going High",
         artist: "Pure Vibe",
@@ -28,6 +23,12 @@ const songs = [
         artist: "Talha Anjum, Shareh",
         src: "https://files.catbox.moe/76cbl3.mp3",
         cover: "https://wallpapers.com/images/thumbnail/boy-smoke-with-hand-on-face-90eo6h8ccp71qgha.jpg"
+    },
+   {
+        title: "Teri Galliyan (Slowed) ",
+        artist: "BMW ",
+        src: "https://files.catbox.moe/p5z4g2.mp3",
+        cover: "https://www.stickersmurali.com/it/img/asfs2027-jpg/folder/products-listado-merchant/adesivi-logo-bmw-2.jpg"
     }
 ];
 
@@ -293,3 +294,4 @@ window.addEventListener('appinstalled', () => {
    =================================== */
 
 window.addEventListener('DOMContentLoaded', initPlayer);
+
