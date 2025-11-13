@@ -3,22 +3,22 @@
 
 const songs = [
     {
-        title: "Midnight Dreams",
-        artist: "Luna Eclipse",
+        title: "Tu - (Slowed)",
+        artist: "Talwinder",
         src: "https://files.catbox.moe/5xaxqo.mp3",
-        cover: "https://images.unsplash.com/photo-1695893155131-5edd46be086c?q=80&w=w=400&h=400&fit=crop"
+        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5BV8Cxx2uQDi3eetWut5WQId8kzKiVaP3KQ&s"
     },
     {
-        title: "Neon Nights",
-        artist: "Cyber Wave",
-        src: "https://files.catbox.moe/5xaxqo.mp3",
+        title: "Going High",
+        artist: "Pure Vibe",
+        src: "https://files.catbox.moe/x2jdih.mp3",
         cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
     },
     {
-        title: "Void Space",
-        artist: "Stellar Echo",
-        src: "https://ia601504.us.archive.org/9/items/tu_20251113/Tu%20-%20Talwiinder%20%28Slowed%20_%20Reverb%29%20Talwinder%20Tu%20Slowed%20-%20Muhammad%20Asim%20-%20SoundLoadMate.com.mp3",
-        cover: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=400&fit=crop"
+        title: "Hold Out",
+        artist: "Talha Anjum, Shareh",
+        src: "https://files.catbox.moe/76cbl3.mp3",
+        cover: "https://wallpapers.com/images/thumbnail/boy-smoke-with-hand-on-face-90eo6h8ccp71qgha.jpg"
     }
 ];
 
