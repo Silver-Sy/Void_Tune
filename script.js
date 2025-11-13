@@ -17,7 +17,7 @@ const songs = [
     {
         title: "Void Space",
         artist: "Stellar Echo",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+        src: "https://ia601504.us.archive.org/9/items/tu_20251113/Tu%20-%20Talwiinder%20%28Slowed%20_%20Reverb%29%20Talwinder%20Tu%20Slowed%20-%20Muhammad%20Asim%20-%20SoundLoadMate.com.mp3",
         cover: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=400&fit=crop"
     }
 ];
