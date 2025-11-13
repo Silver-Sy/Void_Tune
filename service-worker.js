@@ -3,7 +3,7 @@
    Auto-updating + GitHub Pages safe
    =================================== */
 
-const CACHE_VERSION = "v4"; // 🔥 CHANGE THIS EVERY UPDATE
+const CACHE_VERSION = "v5"; // 🔥 CHANGE THIS EVERY UPDATE
 const CACHE_NAME = `voidtune-${CACHE_VERSION}`;
 
 // 🔥 IMPORTANT: Use relative paths (GitHub Pages friendly)
@@ -64,4 +64,5 @@ self.addEventListener('fetch', (event) => {
       .catch(() => caches.match(event.request))
   );
 });
+
 
