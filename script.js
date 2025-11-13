@@ -5,17 +5,7 @@
 
 // ========== SONG DATABASE ==========
 const songs = [
-    {
-        title: "Creed",
-        artist: "Teapot Kitty",
-        src: "https://files.catbox.moe/dz19fy.mp3",
-        cover: "https://i.scdn.co/image/ab67616d0000b2734003b4bfaa44b5fd52b00be2"
-    }, {
-        title: "Hollow",
-        artist: "Teapot Kitty",
-        src: "https://files.catbox.moe/sow673.mp3",
-        cover: "https://media.newyorker.com/photos/59095c67ebe912338a37455d/master/pass/Stokes-Hello-Kitty2.jpg"
-    },
+   
     {
         title: "Tu - (Slowed)",
         artist: "Talwinder",
@@ -307,5 +297,6 @@ window.addEventListener('appinstalled', () => {
    INITIALIZE ON PAGE LOAD
    =================================== */
 window.addEventListener('DOMContentLoaded', initPlayer);
+
 
 
