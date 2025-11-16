@@ -29,6 +29,12 @@ const songs = [
         artist: "BMW ",
         src: "https://files.catbox.moe/p5z4g2.mp3",
         cover: "https://www.stickersmurali.com/it/img/asfs2027-jpg/folder/products-listado-merchant/adesivi-logo-bmw-2.jpg"
+    },
+     {
+        title: "Elusive ",
+        artist: "SS ",
+        src: "https://files.catbox.moe/8hzp1l.MP3",
+        cover: "https://images.unsplash.com/photo-1483884105135-c06ea81a7a80?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG9uZWx5JTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D"
     }
 ];
 
@@ -297,6 +303,7 @@ window.addEventListener('appinstalled', () => {
    INITIALIZE ON PAGE LOAD
    =================================== */
 window.addEventListener('DOMContentLoaded', initPlayer);
+
 
 
 
