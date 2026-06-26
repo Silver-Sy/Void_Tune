@@ -82,8 +82,6 @@ html {
     background: rgba(255,255,255,0.08);
     color: #c084fc;
     border: 1px solid rgba(168, 85, 247, 0.3);
-    position: absolute;
-    transition: top 0.05s, left 0.05s;
 }
 
 /* Transition screen */

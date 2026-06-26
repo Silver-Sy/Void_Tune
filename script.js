@@ -297,10 +297,8 @@ function initIntro() {
         const btnW = noBtn.offsetWidth;
         const btnH = noBtn.offsetHeight;
 
-        const randomX = Math.floor(Math.random() * (vw - btnW - 20)) - noBtn.getBoundingClientRect().left;
-        const randomY = Math.floor(Math.random() * (vh - btnH - 20)) - noBtn.getBoundingClientRect().top;
-
         noBtn.style.position = 'fixed';
+        noBtn.style.margin = '0';
         noBtn.style.left = (Math.random() * (vw - btnW - 20) + 10) + 'px';
         noBtn.style.top = (Math.random() * (vh - btnH - 20) + 10) + 'px';
     }
