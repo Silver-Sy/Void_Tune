@@ -5,37 +5,7 @@
 
 // ========== SONG DATABASE ==========
 const songs = [
-   
-    {
-        title: "Tu - (Slowed)",
-        artist: "Talwinder",
-        src: "https://files.catbox.moe/5xaxqo.mp3",
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5BV8Cxx2uQDi3eetWut5WQId8kzKiVaP3KQ&s"
-    },
-    {
-        title: "Going High",
-        artist: "Pure Vibe",
-        src: "https://files.catbox.moe/x2jdih.mp3",
-        cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
-    },
-    {
-        title: "Hold Out",
-        artist: "Talha Anjum, Shareh",
-        src: "https://files.catbox.moe/76cbl3.mp3",
-        cover: "https://wallpapers.com/images/thumbnail/boy-smoke-with-hand-on-face-90eo6h8ccp71qgha.jpg"
-    },
-    {
-        title: "Teri Galliyan (Slowed) ",
-        artist: "BMW ",
-        src: "https://files.catbox.moe/p5z4g2.mp3",
-        cover: "https://www.stickersmurali.com/it/img/asfs2027-jpg/folder/products-listado-merchant/adesivi-logo-bmw-2.jpg"
-    },
-     {
-        title: "Elusive ",
-        artist: "SS ",
-        src: "https://files.catbox.moe/8hzp1l.MP3",
-        cover: "https://images.unsplash.com/photo-1483884105135-c06ea81a7a80?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG9uZWx5JTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D"
-    }
+    // Add songs here
 ];
 
 // ========== DOM ELEMENTS ==========
