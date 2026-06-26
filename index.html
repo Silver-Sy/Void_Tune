@@ -27,9 +27,31 @@
 <body>
     <!-- Background Container with Gradient -->
     <div class="background-gradient"></div>
-    
+
+    <!-- Flirt Intro Screen -->
+    <div id="introScreen" class="intro-screen">
+        <div class="intro-card">
+            <div class="intro-emoji">🎵</div>
+            <h2 class="intro-question">do you want to vibe with me?</h2>
+            <p class="intro-sub">just us and good music~</p>
+            <div class="intro-buttons">
+                <button id="yesBtn" class="intro-btn yes-btn">yes!</button>
+                <button id="noBtn" class="intro-btn no-btn">no</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transition Message -->
+    <div id="transitionScreen" class="transition-screen" style="display:none;">
+        <div class="transition-content">
+            <div class="transition-emoji">🎧</div>
+            <p class="transition-text">go vibe to your favourite song</p>
+            <p class="transition-sub">✨</p>
+        </div>
+    </div>
+
     <!-- Main Player Container -->
-    <div class="player-container">
+    <div id="playerWrapper" class="player-container" style="display:none;">
         
         <!-- Logo/Title with Version -->
         <h1 class="logo"> Void Tune  <span class="version">v2.0</span></h1>

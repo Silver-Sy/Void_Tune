@@ -300,9 +300,50 @@ window.addEventListener('appinstalled', () => {
 });
 
 /* ===================================
+   INTRO SCREEN LOGIC
+   =================================== */
+function initIntro() {
+    const introScreen = document.getElementById('introScreen');
+    const transitionScreen = document.getElementById('transitionScreen');
+    const playerWrapper = document.getElementById('playerWrapper');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    // Make "No" button run away on mouseover / touchstart
+    function runAway() {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const btnW = noBtn.offsetWidth;
+        const btnH = noBtn.offsetHeight;
+
+        const randomX = Math.floor(Math.random() * (vw - btnW - 20)) - noBtn.getBoundingClientRect().left;
+        const randomY = Math.floor(Math.random() * (vh - btnH - 20)) - noBtn.getBoundingClientRect().top;
+
+        noBtn.style.position = 'fixed';
+        noBtn.style.left = (Math.random() * (vw - btnW - 20) + 10) + 'px';
+        noBtn.style.top = (Math.random() * (vh - btnH - 20) + 10) + 'px';
+    }
+
+    noBtn.addEventListener('mouseover', runAway);
+    noBtn.addEventListener('touchstart', (e) => { e.preventDefault(); runAway(); }, { passive: false });
+
+    // Yes button — show transition then player
+    yesBtn.addEventListener('click', () => {
+        introScreen.style.display = 'none';
+        transitionScreen.style.display = 'flex';
+
+        setTimeout(() => {
+            transitionScreen.style.display = 'none';
+            playerWrapper.style.display = 'block';
+            initPlayer();
+        }, 2200);
+    });
+}
+
+/* ===================================
    INITIALIZE ON PAGE LOAD
    =================================== */
-window.addEventListener('DOMContentLoaded', initPlayer);
+window.addEventListener('DOMContentLoaded', initIntro);
 
 
 
