@@ -5,7 +5,18 @@
 
 // ========== SONG DATABASE ==========
 const songs = [
-    // Add songs here
+    {
+        title: "Fool's Gold - Buffalo Traffic Jam",
+        artist: "Buffalo Traffic Jam",
+        src: "https://files.catbox.moe/r53p57.m4a",
+        cover: "https://resources.tidal.com/images/b77634fe/2498/4185/8152/297690f5b2f1/1280x1280.jpg"
+    },
+    {
+        title: "Ordinary Person",
+        artist: "Leo",
+        src: "https://files.catbox.moe/8td2vx.m4a",
+        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyBi9Ro2nH0KakG39r64lulgeyZszQHVvw-oQrpanOhw&s=10"
+    }
 ];
 
 // ========== DOM ELEMENTS ==========
